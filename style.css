@@ -1,0 +1,13 @@
+.collumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.row>* {
+    height: 20em;
+    margin: 1em;
+}
