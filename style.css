@@ -1,37 +1,74 @@
 :root {
-    --topbar-height: 6em;
+    --topbar-height: 4em;
     --primary-color: rgb(149, 78, 78);
     --secondary-color: rgb(106, 58, 58);
     --normal-font-color: rgb(216, 193, 193);
     --normal-font-size: 1.5em;
 }
 
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 .logo-text {
     font-weight: bold;
-    font-size: 4em;
+    font-size: 3em;
+}
+
+.cool-button {
+    outline: 0.2em black solid;
+    border-radius: 0.2em;
+    padding: 1em;
+    margin: 0em 1em;
+}
+
+.cool-button:active {
+    background-color: var(--normal-font-color);
 }
 
 body {
     margin: 0;
-    padding-top: var(--topbar-height);
+    padding-top: calc(var(--topbar-height) + 1em);
     background-color: var(--primary-color);
     color: var(--normal-font-color);
     font-family: 'Courier New', Courier, monospace;
     font-size: var(--normal-font-size);
 }
 
+h1 {
+    margin: 0.5em;
+}
+
+p {
+    margin: 0.2em 1em;
+}
+
+.align-center {
+    text-align: center;
+}
+
 .topbar {
     top: 0;
     position: fixed;
+    width: 100%;
     height: var(--topbar-height);
 
     display: flex;
     align-items: center;
 
     background-color: var(--secondary-color);
-    width: 100%;
+    box-shadow: 0em 0em 2em black;
 }
 
+.site-content {}
 
 .collumn {
     display: flex;
@@ -41,10 +78,12 @@ body {
 
 .row {
     display: flex;
-    align-items: center;
+    justify-items: center;
 }
 
 .row>* {
-    height: 20em;
-    margin: 1em;
+    width: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    margin: 0.5em;
 }
