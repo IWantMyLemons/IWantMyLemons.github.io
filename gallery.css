@@ -1,0 +1,20 @@
+.gallery {
+    display: flex;
+    border: solid 5px rgb(119, 112, 104);
+    
+    min-width: 200px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 80px 20px 0px 20px;
+}
+
+.gallery-entry {
+    display: flex;
+    flex-direction: column;
+    height: 170px;
+    margin: 10px;
+}
+
+.gallery-image {
+    height: 150px;
+}

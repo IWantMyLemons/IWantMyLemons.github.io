@@ -1,0 +1,72 @@
+body {
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 15%);
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    color: hsl(0, 0%, 15%);
+}
+
+.topbar {
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 5px 0px;
+    z-index: 1;
+
+    display: flex;
+    justify-content: end;
+    position: fixed;
+}
+
+.topbar a {
+    margin: 0px 20px;
+}
+
+.dashed-line {
+    border: none;
+    border-top: dashed;
+    margin: 10px 10px;
+}
+
+.segment {
+    width: 100%;
+}
+
+.segment h2 {
+    margin: 10px auto 20px auto;
+    padding: 0px 20px;
+    max-width: 650px;
+}
+
+.segment p {
+    text-indent: 1em;
+    margin: 0px auto;
+    padding: 0px 20px;
+    max-width: 650px;
+}
+
+.align-colon b {
+    display: inline-block;
+    width: 30%;
+    position: relative;
+    padding-right: 10px;
+}
+
+.align-colon b::after {
+    content: ":";
+    position: absolute;
+    right: 10px;
+}

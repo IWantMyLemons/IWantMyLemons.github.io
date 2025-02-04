@@ -1,0 +1,23 @@
+.introduction {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+
+    background-image: linear-gradient(#bce5a1, #a2d5ef);
+}
+
+.introduction-content {
+    position: absolute;
+    /* TOP | RIGHT | DOWN | LEFT */
+    margin: 5% 10% 5% 60%;
+}
+
+.introduction img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background-size: contain;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 30%,
+            rgba(0, 0, 0, 0) 70%);
+}
