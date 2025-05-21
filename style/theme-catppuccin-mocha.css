@@ -1,0 +1,5 @@
+:root {
+    --theme-base: #1e1e2e;
+    --theme-text: #cdd6f4;
+    --theme-font-monospace: url("/assets/fonts/FantasqueSansMNerdFont-Regular.ttf");
+}
