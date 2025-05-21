@@ -7,3 +7,11 @@ body {
     margin: 0;
     background-color: var(--theme-base);
 }
+
+.absolute {
+    position: absolute;
+}
+
+.fullwidth {
+    width: 100%;
+}

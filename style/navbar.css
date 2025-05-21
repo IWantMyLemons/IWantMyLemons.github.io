@@ -4,12 +4,20 @@
 
 .navbar {
     /* Positioning */
+    position: fixed;
     left: 0px;
     top: 0px;
-    position: absolute;
     width: 100%;
     height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
     /* Coloring */
-    background-color: var(--theme-peach);
+    background-color: var(--theme-surface-0);
+}
+
+.banner {
+    width: 100%;
 }

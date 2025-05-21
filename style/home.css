@@ -1,0 +1,38 @@
+.intro {
+    height: 360px;
+    width: 100%;
+}
+
+.intro-background {
+    position: absolute;
+    width: 100%;
+
+    z-index: -3;
+}
+
+.intro-pace {
+    position: absolute;
+    width: 60%;
+    animation: 10s infinite swaying ease;
+
+    z-index: -2;
+}
+
+@keyframes swaying {
+    0% {translate: 0px 0px;
+        rotate: 0deg;}
+    50% {translate: 5px 1.5px;
+        rotate: 1deg;}
+    100% {translate: 0px 0px;
+        rotate: 0deg;
+    }
+}
+
+.intro-bottom {
+    position: absolute;
+    top: 380px;
+    height: 20px;
+    width: 100%;
+    background-color: var(--theme-base);
+    z-index: -1;
+}

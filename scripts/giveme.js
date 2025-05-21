@@ -1,5 +1,4 @@
 function giveMe() {
-    console.log("GIB ME")
     let gives = document.getElementsByTagName("giveme");
     for (const give of gives) {
         let src = give.attributes?.src?.nodeValue;
@@ -9,12 +8,31 @@ function giveMe() {
         }
         fetch(src).then((res) => {
             res.text().then((text) => {
-                give.outerHTML = text;
+                replaceExcecute(give, text);
             })
         })
     }
 }
 
-addEventListener("DOMContentLoaded", (_) => {
-    giveMe();
-})
+/**
+ * Replaces an element with the html, also executes <script>
+ * with and without src (WARNING : CONTAINS eval)
+ * @param {Element} element 
+ * @param {String} html 
+ */
+function replaceExcecute(element, html) {
+    element.innerHTML = html;
+    for (script of element.getElementsByTagName("script")) {
+        if (script.src != "") {
+            var tag = document.createElement("script");
+            tag.src = script.src;
+            document.head.appendChild(tag);
+        }
+        else {
+            eval(script.innerHTML);
+        }
+    }
+    element.outerHTML = element.innerHTML;
+}
+
+giveMe();
