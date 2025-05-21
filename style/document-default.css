@@ -1,8 +1,9 @@
 * {
     color: var(--theme-text);
-    font-family: var(--theme-font-monospace);
+    font-family: themeMonospace;
 }
 
 body {
+    margin: 0;
     background-color: var(--theme-base);
 }

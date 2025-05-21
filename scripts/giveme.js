@@ -1,15 +1,20 @@
 function giveMe() {
+    console.log("GIB ME")
     let gives = document.getElementsByTagName("giveme");
     for (const give of gives) {
-        let src = give.attributes?.src?.nodeValue;    
+        let src = give.attributes?.src?.nodeValue;
+        if (src === undefined) {
+            give.outerHTML = "<div style=\"background-color:pink;color:black\">ERR : src attribute is missing</div>";
+            continue;
+        }
         fetch(src).then((res) => {
             res.text().then((text) => {
-                give.innerHTML = text;
+                give.outerHTML = text;
             })
         })
     }
 }
 
-addEventListener("load", (_) => {
+addEventListener("DOMContentLoaded", (_) => {
     giveMe();
 })

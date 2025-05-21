@@ -1,4 +1,4 @@
-const DEFAULT_THEME = "catppuccin-mocha"
+const DEFAULT_THEME = "catppuccin-mocha-red"
 
 /**
  * Sets the page theme

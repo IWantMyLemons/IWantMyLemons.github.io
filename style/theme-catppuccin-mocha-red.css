@@ -1,0 +1,13 @@
+:root {
+    --theme-base: #1e1e2e;
+    --theme-text: #cdd6f4;
+ 
+    --theme-red: #f38ba8;
+    --theme-maroon: #eba0ac;
+    --theme-peach: #fab387;
+}
+
+@font-face {
+    font-family: themeMonospace;
+    src: url("/assets/fonts/FantasqueSansMNerdFont-Regular.ttf");
+}
