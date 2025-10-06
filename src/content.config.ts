@@ -1,12 +1,12 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const projects = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./projects" }),
+const simple_projects = defineCollection({
+    loader: glob({ pattern: "**/*.toml", base: "./simple_projects" }),
     schema: z.object({
         name: z.string(),
         description: z.string(),
     })
 })
 
-export const collections = { projects };
+export const collections = { simple_projects };

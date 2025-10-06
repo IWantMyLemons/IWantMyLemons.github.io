@@ -2,13 +2,13 @@
 import { render } from "astro:content";
 import { getCollection, getEntry } from "astro:content";
 
-const projects = await getCollection('projects');
+const simple_projects = await getCollection('simple_projects');
 ---
 
 <section id="projects">
     <h2>My Projects :D</h2>
     <div class="project-container">
-        {projects.map((project) => 
+        {simple_projects.map((project) => 
             <div class="project">
                 <h3> {project.data.name} </h3>
                 <p> {project.data.description} </p>
