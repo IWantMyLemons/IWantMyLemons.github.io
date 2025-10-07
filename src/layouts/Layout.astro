@@ -1,6 +1,16 @@
+---
+import TopBar from "../components/TopBar.astro";
+---
+
 <!doctype html>
 <html lang="en" data-theme="light">
 	<head>
+		<script is:inline>
+			// setup theming
+			const html = document.getElementsByTagName("html")[0];
+			const theme = localStorage.getItem("theme") ?? "light";
+			html.setAttribute("data-theme", theme);
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -8,9 +18,11 @@
 		<title>Jason Saputra Ang</title>
 	</head>
 	<body>
+		<TopBar />
 		<slot />
 	</body>
 	<script>
+		// UwU alt
 		const searchParams = new URLSearchParams(window.location.search);
 		const isUwU = searchParams.get("uwu") === "true";
 
