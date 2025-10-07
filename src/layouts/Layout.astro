@@ -10,6 +10,14 @@
 	<body>
 		<slot />
 	</body>
+	<script>
+		const searchParams = new URLSearchParams(window.location.search);
+		const isUwu = searchParams.get("uwu") === "true";
+
+		if (isUwu) {
+			document.getElementsByTagName("title")[0].text = "Citrus"
+		}
+	</script>
 </html>
 
 <style>
