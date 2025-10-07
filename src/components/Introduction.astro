@@ -1,18 +1,44 @@
 <section id="introduction">
-    <h1>Jason Saputra Ang</h1>
+    <h2>Jason Saputra Ang</h2>
     <p>
         Hi! I'm a university student with a passion for software development, game
         development, embedded projects, and art. I love learning, creative problem
         solving and tinkering.
     </p>
 </section>
+<script>
+    const searchParams = new URLSearchParams(window.location.search);
+    const isUwU = searchParams.get("uwu") === "true";
+
+    if (isUwU) {
+        document.getElementById("introduction")?.classList.add("ace-flag")
+    }
+</script>
 
 <style>
-    h1 {
+    #introduction {
+        background-color: var(--mantle);
+        height: 270px;
+    }
+
+    #introduction h2 {
         margin: 0px;
     }
 
-    #introduction {
-        background-color: var(--crust);
+    .ace-flag {
+        background-image: linear-gradient(
+            135deg,
+            transparent,
+            transparent 10%,
+            var(--black) 10%,
+            var(--black) 20%,
+            var(--gray) 20%,
+            var(--gray) 30%,
+            var(--white) 30%,
+            var(--white) 40%,
+            var(--mauve) 40%,
+            var(--mauve) 50%,
+            transparent 50%
+        );
     }
 </style>
