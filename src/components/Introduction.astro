@@ -1,10 +1,12 @@
-<section id="introduction">
-    <h2>Jason Saputra Ang</h2>
-    <p>
-        Hi! I'm a university student with a passion for software development, game
-        development, embedded projects, and art. I love learning, creative problem
-        solving and tinkering.
-    </p>
+<section id="introduction" class="introduction">
+    <div class="introduction-text">
+        <h2>Jason Saputra Ang</h2>
+        <p>
+            Hi! I'm a university student with a passion for software development, game
+            development, embedded projects, and art. I love learning, creative problem
+            solving and tinkering.
+        </p>
+    </div>
 </section>
 <script>
     const searchParams = new URLSearchParams(window.location.search);
@@ -18,14 +20,21 @@
 </script>
 
 <style>
-    #introduction {
+    .introduction {
         background-color: var(--mantle);
-        aspect-ratio: 8;
-        padding: 5%;
+        padding: 32px 128px;
     }
+    
+    @media (max-width: 640px) {
+        .introduction {
+            padding: 16px 16px;
+        }
+    } 
 
-    #introduction h2 {
-        margin: 0px;
+    .introduction-text {
+       display: flex;
+       flex-direction: column;
+       width: 50%; 
     }
 
     .ace-flag {
@@ -45,8 +54,8 @@
         );
     }
     
-    .ace-flag * {
+    .ace-flag .introduction-text {
         padding: 2px;
-        background-color: var(--mantle);
+        background-color: color-mix(in oklab, var(--base) 50%, transparent 0%);
     }
 </style>

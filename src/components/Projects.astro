@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const simpleProjects = await getCollection("simple_projects");
 ---
 
-<section id="projects">
+<section id="projects" class="projects">
   <h2>My Projects :D</h2>
   <div class="project-container">
     {
@@ -15,7 +15,7 @@ const simpleProjects = await getCollection("simple_projects");
             <h3> {project.data.name} </h3>
             <div class="links">
               <a href={project.data.repo_url}>
-                <img src={GithubIcon.src} width="32" />
+                <img src={GithubIcon.src} width="32" class="logo" />
               </a>
             </div>
           </div>
@@ -27,10 +27,14 @@ const simpleProjects = await getCollection("simple_projects");
 </section>
 
 <style>
+  .projects {
+    max-width: 720px;
+    margin: auto;
+  }
+
   .project-container {
     display: flex;
     flex-direction: column;
-    padding: 16px;
   }
 
   .project {

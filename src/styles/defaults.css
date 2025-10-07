@@ -39,3 +39,7 @@ button:hover {
     75% { translate: 0px -1px; }
     100% { translate: 0px 0px; }
 }
+
+[data-theme="dark"] .logo {
+    filter: invert();
+}
