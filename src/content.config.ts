@@ -6,6 +6,7 @@ const simple_projects = defineCollection({
     schema: z.object({
         name: z.string(),
         description: z.string(),
+        repo_url: z.string(),
     })
 })
 

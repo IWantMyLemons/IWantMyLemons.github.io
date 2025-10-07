@@ -1,0 +1,5 @@
+name = "Leptern"
+description = """
+A pdf manager written in Rust
+"""
+repo_url = "https://github.com/IWantMyLemons/leptern"
