@@ -25,6 +25,7 @@ button {
     all: none;
     border: 2px solid var(--text);
     background-color: var(--base);
+    cursor: pointer;
 }
 
 button:hover {
