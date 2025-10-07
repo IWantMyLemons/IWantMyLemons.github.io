@@ -1,4 +1,5 @@
 ---
+import GithubIcon from "../assets/github-icon.svg";
 import { render } from "astro:content";
 import { getCollection, getEntry } from "astro:content";
 
@@ -10,7 +11,14 @@ const simple_projects = await getCollection('simple_projects');
     <div class="project-container">
         {simple_projects.map((project) => 
             <div class="project">
-                <h3> {project.data.name} </h3>
+                <div class="project-heading">
+                    <h3> {project.data.name} </h3>
+                    <div class="links">
+                        <a href={project.data.repo_url}>
+                        <img src={GithubIcon.src} width="32" />
+                    </a>
+                    </div>
+                </div>
                 <p> {project.data.description} </p>
             </div>
         )}
@@ -20,5 +28,16 @@ const simple_projects = await getCollection('simple_projects');
 <style>
     .project-container {
         background-color: lightblue;
+        padding: 32px;
+    }
+    
+    .project-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .project-heading h3 {
+        margin: 0px;
     }
 </style>
