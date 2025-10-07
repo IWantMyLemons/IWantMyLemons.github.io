@@ -10,8 +10,10 @@
     const searchParams = new URLSearchParams(window.location.search);
     const isUwU = searchParams.get("uwu") === "true";
 
-    if (isUwU) {
-        document.getElementById("introduction")?.classList.add("ace-flag")
+    const introduction = document.getElementById("introduction");
+    if (introduction && isUwU) {
+        introduction.classList.add("ace-flag");
+        introduction.getElementsByTagName("h2")[0].innerText = "Citrus";
     }
 </script>
 
@@ -41,14 +43,10 @@
             var(--mauve) 50%,
             transparent 50%
         );
-        text-shadow:
-            -1px -1px 0 var(--base),
-            1px -1px 0 var(--base),
-            -1px 1px 0 var(--base),
-            1px 1px 0 var(--base),
-            -1px 0px 0 var(--base),
-            1px 0px 0 var(--base),
-            0px -1px 0 var(--base),
-            0px 1px 0 var(--base);
+    }
+    
+    .ace-flag * {
+        padding: 2px;
+        background-color: var(--mantle);
     }
 </style>
