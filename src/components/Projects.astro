@@ -3,41 +3,43 @@ import GithubIcon from "../assets/github-icon.svg";
 import { render } from "astro:content";
 import { getCollection, getEntry } from "astro:content";
 
-const simple_projects = await getCollection('simple_projects');
+const simple_projects = await getCollection("simple_projects");
 ---
 
 <section id="projects">
-    <h2>My Projects :D</h2>
-    <div class="project-container">
-        {simple_projects.map((project) => 
-            <div class="project">
-                <div class="project-heading">
-                    <h3> {project.data.name} </h3>
-                    <div class="links">
-                        <a href={project.data.repo_url}>
-                        <img src={GithubIcon.src} width="32" />
-                    </a>
-                    </div>
-                </div>
-                <p> {project.data.description} </p>
+  <h2>My Projects :D</h2>
+  <div class="project-container">
+    {
+      simple_projects.map((project) => (
+        <div class="project">
+          <div class="project-heading">
+            <h3> {project.data.name} </h3>
+            <div class="links">
+              <a href={project.data.repo_url}>
+                <img src={GithubIcon.src} width="32" />
+              </a>
             </div>
-        )}
-    </div>
+          </div>
+          <p> {project.data.description} </p>
+        </div>
+      ))
+    }
+  </div>
 </section>
 
 <style>
-    .project-container {
-        background-color: lightblue;
-        padding: 32px;
-    }
-    
-    .project-heading {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .project-heading h3 {
-        margin: 0px;
-    }
+  .project-container {
+    background-color: lightblue;
+    padding: 32px;
+  }
+
+  .project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-heading h3 {
+    margin: 0px;
+  }
 </style>
