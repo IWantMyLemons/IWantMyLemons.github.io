@@ -29,8 +29,16 @@ const simple_projects = await getCollection("simple_projects");
 
 <style>
   .project-container {
-    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .project {
     padding: 32px;
+    margin: 8px;
+    background-color: var(--surface-0);
+    border-radius: 16px;
   }
 
   .project-heading {
