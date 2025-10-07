@@ -1,4 +1,15 @@
+:root {
+    --text-small: 8px;
+    --text-medium: 16px;
+    --text-large: 32px;
+}
+
 * {
     color: var(--text);
     font-family: Helvetica, Arial, sans-serif;
+    font-size: var(--text-medium);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: var(--text-large);
 }
