@@ -1,15 +1,22 @@
 :root {
     --text-small: 8px;
-    --text-medium: 16px;
-    --text-large: 32px;
+    --text-standard: 16px;
+    --text-subheading: 24px;
+    --text-heading: 32px;
 }
 
 * {
     color: var(--text);
     font-family: Helvetica, Arial, sans-serif;
-    font-size: var(--text-medium);
+    font-size: var(--text-standard);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size: var(--text-large);
+    font-size: var(--text-heading);
+}
+
+@media (max-width: 640px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--text-subheading);
+    }
 }
