@@ -1,67 +1,107 @@
+---
+import { Picture } from "astro:assets";
+import theHuman from "../assets/images/the-human.jpg";
+import itsMe from "../assets/images/its-me.png";
+---
+
 <section id="introduction" class="introduction">
-    <div class="introduction-text">
-        <h1>Jason Saputra Ang</h1>
-        <p>
-            Hi! I'm a university student with a passion for software development, game
-            development, embedded projects, and art. I love learning, creative problem
-            solving and tinkering. May this portfolio be an impressive one!
-        </p>
-    </div>
+  <div class="introduction-text">
+    <h1>Jason Saputra Ang</h1>
+    <p>
+      Hi! I'm a university student with a passion for software development, game
+      development, embedded projects, and art. I love learning, creative problem
+      solving and tinkering. May this portfolio be an impressive one!
+    </p>
+  </div>
+<Picture
+    src={theHuman}
+    formats={["avif", "webp"]}
+    alt="it's... me?"
+    layout="constrained"
+    class="person"
+    id="person"
+/>
+<Picture
+    src={itsMe}
+    formats={["avif", "webp"]}
+    alt="it's... me!"
+    layout="constrained"
+    class="its-me hidden"
+    id="me"
+/>
 </section>
 <script>
-    const searchParams = new URLSearchParams(window.location.search);
-    const isUwU = searchParams.get("uwu") === "true";
+  const searchParams = new URLSearchParams(window.location.search);
+  const isUwU = searchParams.get("uwu") === "true";
 
-    const introduction = document.getElementById("introduction");
-    if (introduction && isUwU) {
-        introduction.classList.add("ace-flag");
-        introduction.getElementsByTagName("h1")[0].innerText = "Citrus";
-    }
+  const introduction = document.getElementById("introduction");
+  if (introduction && isUwU) {
+    introduction.classList.add("ace-flag");
+    introduction.getElementsByTagName("h1")[0].innerText = "Citrus";
+    document.getElementById("person")?.classList.add("hidden");
+    document.getElementById("me")?.classList.remove("hidden");
+  }
 </script>
 
 <style>
+  .introduction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--mantle);
+  }
+
+  @media (max-width: 640px) {
     .introduction {
-        background-color: var(--mantle);
-        padding: 32px 128px;
+      flex-direction: column;
+      padding: 16px 16px;
     }
-    
-    @media (max-width: 640px) {
-        .introduction {
-            padding: 16px 16px;
-        }
-    } 
+  }
 
+  .introduction-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 16px 0px 128px;
+    width: 50%;
+  }
+
+  @media (max-width: 640px) {
     .introduction-text {
-       display: flex;
-       flex-direction: column;
-       width: 50%; 
+      margin: 0px 0px;
+      width: 100%;
     }
+  }
+  
+  .person, .its-me {
+    height: 256px;
+    width: 256px;
+    object-fit: cover;
+    object-position: 0% 25%;
+  }
+  
+  .hidden {
+    display: none;
+  }
 
-    @media (max-width: 640px) {
-        .introduction-text {
-            width: 100%;
-        }
-    } 
+  .ace-flag {
+    background-image: linear-gradient(
+      135deg,
+      transparent,
+      transparent 10%,
+      var(--black) 10%,
+      var(--black) 20%,
+      var(--gray) 20%,
+      var(--gray) 30%,
+      var(--white) 30%,
+      var(--white) 40%,
+      var(--mauve) 40%,
+      var(--mauve) 50%,
+      transparent 50%
+    );
+  }
 
-    .ace-flag {
-        background-image: linear-gradient(
-            135deg,
-            transparent,
-            transparent 10%,
-            var(--black) 10%,
-            var(--black) 20%,
-            var(--gray) 20%,
-            var(--gray) 30%,
-            var(--white) 30%,
-            var(--white) 40%,
-            var(--mauve) 40%,
-            var(--mauve) 50%,
-            transparent 50%
-        );
-    }
-    
-    .ace-flag .introduction-text {
-        padding: 2px;
-        background-color: color-mix(in oklab, var(--base) 50%, transparent 0%);
-    }
+  .ace-flag .introduction-text {
+    padding: 2px;
+    background-color: color-mix(in oklab, var(--base) 50%, transparent 0%);
+  }
 </style>
