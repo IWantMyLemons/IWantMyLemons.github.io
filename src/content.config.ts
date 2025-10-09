@@ -6,7 +6,9 @@ const simple_projects = defineCollection({
     schema: z.object({
         name: z.string(),
         description: z.string(),
-        repo_url: z.string(),
+        repo_url: z.ostring(),
+        google_drive_url: z.ostring(),
+        itch_url: z.ostring(),
     })
 })
 

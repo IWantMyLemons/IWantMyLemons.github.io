@@ -1,0 +1,9 @@
+name = "DQN vs FSM test"
+description = """
+A game built to compare the effectiveness of Deep-Q
+Networks against Finite-State Machines, this was
+part of a Research Methodology Class. I handled the
+development of the game, methodology and interpreting
+research results.
+"""
+google_drive_url = "https://drive.google.com/file/d/1hqHqf7uDy8pxpr7YUYIc2mRqPQt4LSJG/view?usp=sharing"
