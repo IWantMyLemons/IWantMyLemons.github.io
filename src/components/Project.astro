@@ -18,26 +18,23 @@ const { name, description, repo_url, google_drive_url } = Astro.props;
     <h3>{name}</h3>
     <div class="links">
       {
-        repo_url ? (
+        repo_url && (
           <a href={repo_url}>
             <Image src={GithubIcon} alt={repo_url} width="32" class="logo" />
           </a>
-        ) : (
-          ""
         )
       }
       {
-        google_drive_url ? (
+        google_drive_url && (
           <a href={google_drive_url}>
             <Image src={GoogleDriveIcon} alt={google_drive_url} width="32" />
           </a>
-        ) : (
-          ""
         )
       }
     </div>
   </div>
-  {description ? <p>{description}</p> : ""}
+  {description && <p>{description}</p>}
+  <prop></prop>
 </div>
 <style>
   .project {
