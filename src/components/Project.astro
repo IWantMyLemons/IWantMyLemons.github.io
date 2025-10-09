@@ -20,6 +20,13 @@ const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
     <h3>{name}</h3>
     <div class="links">
       {
+        itch_url && (
+          <a href={itch_url}>
+            <Image src={ItchIcon} alt={itch_url} width="32" class="logo" />
+          </a>
+        )
+      }
+      {
         repo_url && (
           <a href={repo_url}>
             <Image src={GithubIcon} alt={repo_url} width="32" class="logo" />
