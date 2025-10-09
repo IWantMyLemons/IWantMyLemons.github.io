@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import GithubIcon from "../assets/images/github-icon.svg";
 import GoogleDriveIcon from "../assets/images/google-drive-icon.svg";
 import { getCollection } from "astro:content";
+import Project from "./Project.astro";
 
 const simpleProjects = await getCollection("simple_projects");
 ---
@@ -12,37 +13,12 @@ const simpleProjects = await getCollection("simple_projects");
   <div class="project-container">
     {
       simpleProjects.map((project) => (
-        <div class="project">
-          <div class="project-heading">
-            <h3> {project.data.name} </h3>
-            <div class="links">
-              {project.data.repo_url ? (
-                <a href={project.data.repo_url}>
-                  <Image
-                    src={GithubIcon}
-                    alt={project.data.repo_url}
-                    width="32"
-                    class="logo"
-                  />
-                </a>
-              ) : (
-                ""
-              )}
-              {project.data.google_drive_url ? (
-                <a href={project.data.google_drive_url}>
-                  <Image
-                    src={GoogleDriveIcon}
-                    alt={project.data.google_drive_url}
-                    width="32"
-                  />
-                </a>
-              ) : (
-                ""
-              )}
-            </div>
-          </div>
-          <p> {project.data.description} </p>
-        </div>
+        <Project
+          name={project.data.name}
+          description={project.data.description}
+          repo_url={project.data.repo_url}
+          google_drive_url={project.data.google_drive_url}
+        />
       ))
     }
   </div>
@@ -57,22 +33,5 @@ const simpleProjects = await getCollection("simple_projects");
   .project-container {
     display: flex;
     flex-direction: column;
-  }
-
-  .project {
-    padding: 32px;
-    margin: 8px;
-    background-color: var(--surface-0);
-    border-radius: 16px;
-  }
-
-  .project-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .project-heading h3 {
-    margin: 0px;
   }
 </style>

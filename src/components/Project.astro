@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import GithubIcon from "../assets/images/github-icon.svg";
+import GoogleDriveIcon from "../assets/images/google-drive-icon.svg";
+
+interface Props {
+  name: string;
+  description: string;
+  repo_url?: string;
+  google_drive_url?: string;
+}
+
+const { name, description, repo_url, google_drive_url } = Astro.props;
+---
+
+<div class="project">
+  <div class="project-heading">
+    <h3>{name}</h3>
+    <div class="links">
+      {
+        repo_url ? (
+          <a href={repo_url}>
+            <Image src={GithubIcon} alt={repo_url} width="32" class="logo" />
+          </a>
+        ) : (
+          ""
+        )
+      }
+      {
+        google_drive_url ? (
+          <a href={google_drive_url}>
+            <Image src={GoogleDriveIcon} alt={google_drive_url} width="32" />
+          </a>
+        ) : (
+          ""
+        )
+      }
+    </div>
+  </div>
+  {description ? <p>{description}</p> : ""}
+</div>
+<style>
+  .project {
+    padding: 32px;
+    margin: 8px;
+    background-color: var(--surface-0);
+    border-radius: 16px;
+  }
+
+  .project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-heading h3 {
+    margin: 0px;
+  }
+</style>
