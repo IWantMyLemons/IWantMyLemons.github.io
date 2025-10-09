@@ -40,13 +40,6 @@ const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
           </a>
         )
       }
-      {
-        itch_url && (
-          <a href={itch_url}>
-            <Image src={ItchIcon} alt={itch_url} width="32" class="logo" />
-          </a>
-        )
-      }
     </div>
   </div>
   {description && <p>{description}</p>}
@@ -68,5 +61,9 @@ const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
 
   .project-heading h3 {
     margin: 0px;
+  }
+  
+  .links a {
+    text-decoration: none;
   }
 </style>
