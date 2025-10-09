@@ -1,16 +1,23 @@
 ---
-import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import Project from "./Project.astro";
+
+const collaborativeProjects = await getCollection("collaborativeProjects");
 ---
 
 <section id="collaborative-projects" class="collaborative-projects">
   <h2>Collaborative Projects</h2>
   <div class="project-container">
-    <Project
-      name="Litter Flipper"
-      description="game made as part of "
-      itch_url="https://bgdc.itch.io/litter-flipper"
-    />
+    {
+      collaborativeProjects.map((project) => (
+        <Project
+          name={project.data.name}
+          description={project.data.description}
+          repo_url={project.data.repo_url}
+          google_drive_url={project.data.google_drive_url}
+        />
+      ))
+    }
   </div>
 </section>
 

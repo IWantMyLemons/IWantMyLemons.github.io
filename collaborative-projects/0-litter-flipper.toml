@@ -1,0 +1,6 @@
+name = "Litter Flipper"
+description = """
+Contributed as a programmer in an arcade trash collecting game
+"""
+repo_url = "https://github.com/IWantMyLemons/litter-flipper"
+itch_url = "https://bgdc.itch.io/litter-flipper"

@@ -1,6 +1,6 @@
 name = "DQN vs FSM test"
 description = """
-A game built to compare the effectiveness of Deep-Q
+Game built to compare the effectiveness of Deep-Q
 Networks against Finite-State Machines, this was
 part of a Research Methodology Class. I handled the
 development of the game, methodology and interpreting

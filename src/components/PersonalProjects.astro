@@ -2,14 +2,14 @@
 import { getCollection } from "astro:content";
 import Project from "./Project.astro";
 
-const simpleProjects = await getCollection("simple_projects");
+const personalProjects = await getCollection("personalProjects")
 ---
 
 <section id="personal-projects" class="personal-projects">
   <h2>Personal Projects</h2>
   <div class="project-container">
     {
-      simpleProjects.map((project) => (
+      personalProjects.map((project) => (
         <Project
           name={project.data.name}
           description={project.data.description}
