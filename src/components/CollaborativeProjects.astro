@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import Project from "./Project.astro";
+---
+
+<section id="collaborative-projects" class="collaborative-projects">
+  <h2>Collaborative Projects</h2>
+  <div class="project-container">
+    <Project
+      name="Litter Flipper"
+      description="game made as part of "
+      itch_url="https://bgdc.itch.io/litter-flipper"
+    />
+  </div>
+</section>
+
+<style>
+  .collaborative-projects {
+    max-width: 720px;
+    margin: auto;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

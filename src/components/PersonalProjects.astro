@@ -5,8 +5,8 @@ import Project from "./Project.astro";
 const simpleProjects = await getCollection("simple_projects");
 ---
 
-<section id="projects" class="projects">
-  <h2>My Projects</h2>
+<section id="personal-projects" class="personal-projects">
+  <h2>Personal Projects</h2>
   <div class="project-container">
     {
       simpleProjects.map((project) => (
@@ -22,7 +22,7 @@ const simpleProjects = await getCollection("simple_projects");
 </section>
 
 <style>
-  .projects {
+  .personal-projects {
     max-width: 720px;
     margin: auto;
   }
