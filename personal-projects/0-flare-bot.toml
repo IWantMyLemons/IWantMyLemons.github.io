@@ -1,6 +1,7 @@
 name = "Flare Discord Bot"
 description = """
 Rust-based discord bot with a custom self-made framework built
-to allow bash-like command execution
+to allow bash-like command execution. Created as an upgrade
+and rewrite of a similar bot i've made in python.
 """
 repo_url = "https://github.com/IWantMyLemons/flare-discord-bot"

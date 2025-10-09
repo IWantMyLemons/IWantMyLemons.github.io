@@ -1,6 +1,8 @@
 name = "Spamventure"
 description = """
-Contributed as a programmer and pixel-artist in a platformer
+Spam-based platforming game made as a submission to Jame Gam
+#54. I contributed as a programmer and pixel-artist in a team
+of three.
 """
 repo_url = "https://github.com/IWantMyLemons/Feed-The-Cat"
 itch_url = "https://i-ate-a-lemon.itch.io/spamventure"

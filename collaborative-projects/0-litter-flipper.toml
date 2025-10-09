@@ -1,6 +1,8 @@
 name = "Litter Flipper"
 description = """
-Contributed as a programmer in an arcade trash collecting game
+Arcade trash-collecting game where you frantically save both
+fish and the environment. Contributed as a programmer in a
+team of five.
 """
 repo_url = "https://github.com/IWantMyLemons/litter-flipper"
 itch_url = "https://bgdc.itch.io/litter-flipper"

@@ -1,5 +1,6 @@
 name = "Leptern (WIP)"
 description = """
-Pdf manager written in Rust
+Pdf manager written in Rust + Leptos. Written as a way
+to learn web development in rust.
 """
 repo_url = "https://github.com/IWantMyLemons/leptern"

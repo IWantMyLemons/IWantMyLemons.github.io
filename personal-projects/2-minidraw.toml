@@ -1,0 +1,6 @@
+name = "Minidraw"
+description = """
+Drawing app written in rust + bevy. Created as a way for
+me to learn the ECS Pattern.
+"""
+repo_url = "https://github.com/IWantMyLemons/minidraw"
