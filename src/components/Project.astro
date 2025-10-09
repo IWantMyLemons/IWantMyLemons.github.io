@@ -2,15 +2,17 @@
 import { Image } from "astro:assets";
 import GithubIcon from "../assets/images/github-icon.svg";
 import GoogleDriveIcon from "../assets/images/google-drive-icon.svg";
+import ItchIcon from "../assets/images/itch-icon.svg";
 
 interface Props {
   name: string;
   description: string;
   repo_url?: string;
   google_drive_url?: string;
+  itch_url?: string;
 }
 
-const { name, description, repo_url, google_drive_url } = Astro.props;
+const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
 ---
 
 <div class="project">
@@ -31,10 +33,17 @@ const { name, description, repo_url, google_drive_url } = Astro.props;
           </a>
         )
       }
+      {
+        itch_url && (
+          <a href={itch_url}>
+            <Image src={ItchIcon} alt={itch_url} width="32" class="logo" />
+          </a>
+        )
+      }
     </div>
   </div>
   {description && <p>{description}</p>}
-  <prop></prop>
+  <prop />
 </div>
 <style>
   .project {
