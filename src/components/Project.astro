@@ -43,7 +43,7 @@ const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
     </div>
   </div>
   {description && <p>{description}</p>}
-  <prop />
+  <slot />
 </div>
 <style>
   .project {
