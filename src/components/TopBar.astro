@@ -15,7 +15,7 @@
     justify-content: space-between;
     background-color: var(--crust);
   }
-  
+
   .topbar nav {
     margin-left: 16px;
     display: flex;
@@ -27,7 +27,7 @@
 <script>
   const darkModeToggle = document.getElementById("dark-mode-toggle");
   darkModeToggle?.addEventListener("click", toggleDarkMode);
-  
+
   function toggleDarkMode() {
     const html = document.getElementsByTagName("html")[0];
     const currTheme = html.getAttribute("data-theme");

@@ -13,22 +13,22 @@ import itsMe from "../assets/images/its-me.png";
       solving and tinkering. May this portfolio be an impressive one!
     </p>
   </div>
-<Picture
+  <Picture
     src={theHuman}
     formats={["avif", "webp"]}
     alt="it's... me?"
     layout="constrained"
     class="person"
     id="person"
-/>
-<Picture
+  />
+  <Picture
     src={itsMe}
     formats={["avif", "webp"]}
     alt="it's... me!"
     layout="constrained"
     class="its-me hidden"
     id="me"
-/>
+  />
 </section>
 <script>
   const searchParams = new URLSearchParams(window.location.search);
@@ -71,14 +71,15 @@ import itsMe from "../assets/images/its-me.png";
       width: 100%;
     }
   }
-  
-  .person, .its-me {
+
+  .person,
+  .its-me {
     height: 256px;
     width: 256px;
     object-fit: cover;
     object-position: 0% 25%;
   }
-  
+
   .hidden {
     display: none;
   }

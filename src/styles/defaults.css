@@ -1,46 +1,64 @@
 :root {
-    --text-small: 8px;
-    --text-standard: 16px;
-    --text-subheading: 24px;
-    --text-heading: 32px;
+  --text-small: 8px;
+  --text-standard: 16px;
+  --text-subheading: 24px;
+  --text-heading: 32px;
 }
 
 * {
-    color: var(--text);
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: var(--text-standard);
+  color: var(--text);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: var(--text-standard);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-size: var(--text-heading);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--text-heading);
 }
 
 @media (max-width: 640px) {
-    h1, h2, h3, h4, h5, h6 {
-        font-size: var(--text-subheading);
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: var(--text-subheading);
+  }
 }
 
 button {
-    all: none;
-    border: 2px solid var(--text);
-    background-color: var(--base);
-    cursor: pointer;
+  all: none;
+  border: 2px solid var(--text);
+  background-color: var(--base);
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: var(--overlay-0);
-    animation: wobbleBorder 100ms infinite 10s;
-    animation-delay: 10s;
+  background-color: var(--overlay-0);
+  animation: wobbleBorder 100ms infinite 10s;
+  animation-delay: 10s;
 }
 
 @keyframes wobbleBorder {
-    0% { translate: 0px 0px; }
-    25% { translate: 0px 1px; }
-    75% { translate: 0px -1px; }
-    100% { translate: 0px 0px; }
+  0% {
+    translate: 0px 0px;
+  }
+  25% {
+    translate: 0px 1px;
+  }
+  75% {
+    translate: 0px -1px;
+  }
+  100% {
+    translate: 0px 0px;
+  }
 }
 
 [data-theme="dark"] .logo {
-    filter: invert();
+  filter: invert();
 }
