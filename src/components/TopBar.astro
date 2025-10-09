@@ -28,12 +28,6 @@
   const darkModeToggle = document.getElementById("dark-mode-toggle");
   darkModeToggle?.addEventListener("click", toggleDarkMode);
   
-  const search = document.location.search;
-  const nav = document.getElementsByTagName("nav")[0];
-  for (const link of nav.querySelectorAll("a")) {
-    link.href += search;
-  }
-
   function toggleDarkMode() {
     const html = document.getElementsByTagName("html")[0];
     const currTheme = html.getAttribute("data-theme");
