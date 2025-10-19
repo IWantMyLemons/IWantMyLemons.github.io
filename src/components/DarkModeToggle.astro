@@ -1,0 +1,33 @@
+---
+import Switch from "./Switch.astro";
+---
+<label class="dark-mode">
+    <div>Dark Mode</div>
+    <Switch id="dark-mode-toggle" />
+</label>
+
+<style>
+    .dark-mode {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .dark-mode div {
+        margin-right: 8px;
+        transform: translateY(-2px); /* align text to optical center */
+    }
+</style>
+
+<script>
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  darkModeToggle?.addEventListener("click", toggleDarkMode);
+
+  function toggleDarkMode() {
+    const html = document.getElementsByTagName("html")[0];
+    const currTheme = html.getAttribute("data-theme");
+    const newTheme = currTheme === "light" ? "dark" : "light";
+    html.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  }
+</script>

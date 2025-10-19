@@ -1,8 +1,12 @@
+---
+import DarkModeToggle from "./DarkModeToggle.astro";
+---
+
 <div class="topbar">
   <nav>
     <a href="/">About Me</a>
   </nav>
-  <button id="dark-mode-toggle">toggle dark mode</button>
+  <DarkModeToggle />
 </div>
 
 <style>
@@ -14,27 +18,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 16px;
     background-color: var(--crust);
   }
 
   .topbar nav {
-    margin-left: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
     transform: translateY(-2px); /* align text to optical center */
   }
 </style>
-
-<script>
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
-  darkModeToggle?.addEventListener("click", toggleDarkMode);
-
-  function toggleDarkMode() {
-    const html = document.getElementsByTagName("html")[0];
-    const currTheme = html.getAttribute("data-theme");
-    const newTheme = currTheme === "light" ? "dark" : "light";
-    html.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  }
-</script>
