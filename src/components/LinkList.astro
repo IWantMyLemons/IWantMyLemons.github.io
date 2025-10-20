@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import GithubIcon from "../assets/images/github-icon.svg";
+import LinkedinIcon from "../assets/images/linkedin-icon.svg";
+import ItchIcon from "../assets/images/itch-icon.svg";
+import FuraffinityIcon from "../assets/images/furaffinity-icon.webp";
+---
+
+<div class="link-list">
+  <a href="https://github.com/IWantMyLemons" class="link-item">
+    <Image src={GithubIcon} alt="GitHub" width="32" class="logo" />
+  </a>
+  <a href="https://www.linkedin.com/in/jason-saputra-ang/" class="link-item">
+    <Image src={LinkedinIcon} alt="LinkedIn" width="32" class="logo" />
+  </a>
+  <a href="https://i-ate-a-lemon.itch.io/" class="link-item">
+    <Image src={ItchIcon} alt="Itch.io" width="32" class="logo" />
+  </a>
+  <a href="https://www.furaffinity.net/user/citrussus" class="link-item uwu-hide">
+    <Image
+      src={FuraffinityIcon}
+      alt="Furaffinity"
+      layout="constrained"
+      width="32"
+    />
+  </a>
+</div>
+
+<script>
+  let searchParams = new URLSearchParams(window.location.search);
+  let isUwU = searchParams.get("uwu") === "true";
+
+  if (isUwU) {
+    for (const element of document.getElementsByClassName("uwu-hide")) {
+      element.classList.remove("uwu-hide");
+    }
+  }
+</script>
+
+<style>
+  .link-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .link-item {
+    margin: 4px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .uwu-hide {
+    display: none;
+  }
+</style>
