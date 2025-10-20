@@ -20,7 +20,9 @@ import Switch from "./Switch.astro";
 </style>
 
 <script>
-  const darkModeToggle = document.getElementById("dark-mode-toggle");
+  const darkModeToggle = document.getElementById("dark-mode-toggle") as HTMLInputElement;
+  const isDark = localStorage.getItem("theme");
+  darkModeToggle.checked = isDark === "dark";
   darkModeToggle?.addEventListener("click", toggleDarkMode);
 
   function toggleDarkMode() {
