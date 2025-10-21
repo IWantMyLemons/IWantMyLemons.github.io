@@ -17,6 +17,8 @@ const { id } = Astro.props;
     display: inline-block;
     height: 32px;
     width: 64px;
+    border-radius: 24px;
+    transition: 0s;
   }
 
   .switch input {
@@ -51,6 +53,10 @@ const { id } = Astro.props;
 
   input:checked + .slider {
     background-color: var(--rosewater);
+  }
+
+  .switch:has(input:focus) {
+    border: 2px solid var(--blue);
   }
 
   input:focus + .slider,
