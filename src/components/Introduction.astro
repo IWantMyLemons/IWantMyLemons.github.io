@@ -2,7 +2,9 @@
 import { Picture } from "astro:assets";
 import theHuman from "../assets/images/the-human.jpg";
 import itsMe from "../assets/images/its-me.png";
+import DownloadIcon from "../assets/images/download-icon.svg";
 import LinkList from "./LinkList.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <section id="introduction" class="introduction">
@@ -13,7 +15,13 @@ import LinkList from "./LinkList.astro";
       development, embedded projects, and art. I love learning, creative problem
       solving and tinkering. May this portfolio be an impressive one!
     </p>
-    <LinkList />
+    <div class="introduction-bottom">
+      <LinkList />
+      <a class="download-cv" href="/cv.pdf">
+        <Image src={DownloadIcon} alt="my cv!!!" width={32} />
+        <p>or download my CV!</p>
+      </a>
+    </div>
   </div>
   <Picture
     src={theHuman}
@@ -74,6 +82,35 @@ import LinkList from "./LinkList.astro";
       margin: 0px 0px;
       width: 100%;
     }
+  }
+
+  .introduction-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+  }
+
+  .download-cv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: var(--surface-0);
+    transition: 0.4s;
+  }
+
+  .download-cv p {
+    transform: translateY(-2px); /* align text to optical center */
+  }
+
+  .download-cv:hover {
+    box-shadow: 0 0 4px var(--rosewater);
   }
 
   .person,
