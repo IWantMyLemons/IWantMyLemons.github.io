@@ -22,6 +22,11 @@ import TopBar from "../components/TopBar.astro";
     <slot />
   </body>
   <script>
+    // preserve-search handling
+    document.querySelectorAll("a[preserve-search]").forEach(elem => {
+      (elem as HTMLAnchorElement).href += window.location.search;
+    })
+
     // UwU alt
     const searchParams = new URLSearchParams(window.location.search);
     const isUwU = searchParams.get("uwu") === "true";
