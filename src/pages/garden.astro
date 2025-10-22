@@ -1,0 +1,151 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div id="fops" class="fops">
+    <div id="fops-sprite" class="fops-sprite">
+        ^w^
+    </div>
+  </div>
+  <div class="ground"></div>
+</Layout>
+
+<style>
+  .fops {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    transition: 0ms;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+  }
+  .fops-sprite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--crust);
+    transition: 0ms;
+    width: 48px;
+    height: 48px;
+    background-color: var(--red);
+    z-index: 10;
+    cursor: grab;
+  }
+  .fops-sprite:active {
+    cursor: grabbing;
+    transition: 100ms;
+    width: 60px;
+    height: 38.4px;
+  }
+  .fops-sprite::selection {
+    all: none;
+  }
+
+  .ground {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 256px;
+    z-index: 1;
+    background-color: var(--overlay-0);
+  }
+</style>
+
+<script>
+  class Vector2 {
+    x: number;
+    y: number;
+
+    constructor(x: number, y: number) {
+      this.x = x;
+      this.y = y;
+    }
+
+    negate() {
+      return new Vector2(-this.x, -this.y);
+    }
+
+    add(other: Vector2) {
+      return new Vector2(this.x + other.x, this.y + other.y);
+    }
+
+    sub(other: Vector2) {
+      return this.add(other.negate());
+    }
+
+    mul(constant: number) {
+      return new Vector2(this.x * constant, this.y * constant);
+    }
+
+    length() {
+      return Math.sqrt(this.x * this.x + this.y * this.y);
+    }
+
+    normaliseOrZero() {
+      const length = this.length();
+      if (length === 0) return new Vector2(0, 0);
+      return this.mul(1 / length);
+    }
+
+    toString() {
+      return `Vector2(${this.x}, ${this.y})`;
+    }
+  }
+
+  const targetFPS = 60;
+  const roamDelaySeconds = 8;
+  const areaDepth = 256;
+  const areaWidth = window.innerWidth;
+  const foxWidth = 32;
+
+  const maxAccel = 500;
+  const walkP = 4.0;
+  const walkD = 3.0;
+
+  const foxElem = document.getElementById("fops");
+
+  let foxPos = new Vector2(0, 0);
+  let foxVel = new Vector2(0, 0);
+  let foxTarget = new Vector2(0, 0);
+
+  function updateElements() {
+    if (!foxElem) return;
+    const xPos = foxPos.x;
+    const yPos = foxPos.y;
+
+    foxElem.style.left = `${xPos}px`;
+    foxElem.style.bottom = `${yPos}px`;
+  }
+
+  let lastError = new Vector2(0, 0);
+  function updateWalk() {
+    const dt = 1 / targetFPS;
+    const error = foxTarget.sub(foxPos);
+    const derivative = error.sub(lastError).mul(1 / dt);
+    let acceleration = error.mul(walkP).add(derivative.mul(walkD));
+    if (acceleration.length() > maxAccel) {
+      acceleration = acceleration.normaliseOrZero().mul(maxAccel);
+    }
+    foxVel = foxVel.add(acceleration.mul(dt));
+    foxPos = foxPos.add(foxVel.mul(dt));
+    lastError = error;
+  }
+
+  setInterval(() => {
+    // Logic
+    updateWalk();
+
+    // Rendering
+    updateElements();
+  }, 1000 / targetFPS);
+
+  setInterval(() => {
+    const randX = Math.random() * (areaWidth - foxWidth);
+    const randY = Math.random() * areaDepth;
+
+    foxTarget = new Vector2(randX, randY);
+  }, 1000 * roamDelaySeconds);
+</script>
