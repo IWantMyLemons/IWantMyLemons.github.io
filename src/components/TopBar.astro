@@ -5,6 +5,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 <div class="topbar">
   <nav>
     <a href="/" preserve-search>About Me</a>
+    <a href="/garden" class="hidden" preserve-search>Garden</a>
   </nav>
   <DarkModeToggle />
 </div>
@@ -29,4 +30,18 @@ import DarkModeToggle from "./DarkModeToggle.astro";
     align-items: center;
     transform: translateY(-2px); /* align text to optical center */
   }
+  
+  .hidden {
+    display: none;
+  }
 </style>
+
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  const isUwU = searchParams.get("uwu") === "true";
+  if (isUwU) {
+    for (const elem of document.getElementsByClassName("hidden")) {
+      elem.classList.remove("hidden");
+    }
+  }
+</script>
