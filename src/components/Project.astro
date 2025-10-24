@@ -21,21 +21,21 @@ const { name, description, repo_url, google_drive_url, itch_url } = Astro.props;
     <div class="links">
       {
         itch_url && (
-          <a href={itch_url}>
-            <Image src={ItchIcon} alt={itch_url} width="32" class="logo" />
+          <a href={itch_url} class="icon">
+            <Image src={ItchIcon} alt={itch_url} width="32" class="invert-dark" />
           </a>
         )
       }
       {
         repo_url && (
-          <a href={repo_url}>
-            <Image src={GithubIcon} alt={repo_url} width="32" class="logo" />
+          <a href={repo_url} class="icon">
+            <Image src={GithubIcon} alt={repo_url} width="32" class="invert-dark" />
           </a>
         )
       }
       {
         google_drive_url && (
-          <a href={google_drive_url}>
+          <a href={google_drive_url} class="icon">
             <Image src={GoogleDriveIcon} alt={google_drive_url} width="32" />
           </a>
         )

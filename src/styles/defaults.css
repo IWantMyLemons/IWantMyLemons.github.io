@@ -60,6 +60,6 @@ button:hover {
   }
 }
 
-[data-theme="dark"] .logo {
+[data-theme="dark"] .invert-dark {
   filter: invert();
 }
